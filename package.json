@@ -1,0 +1,24 @@
+{
+  "name": "frontend-nanodegree-mobile-portfolio",
+  "version": "1.0.0",
+  "description": "Performance Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigapplemonkey/frontend-nanodegree-mobile-portfolio.git"
+  },
+  "author": "Jorge Asuaje",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigapplemonkey/frontend-nanodegree-mobile-portfolio/issues"
+  },
+  "homepage": "https://github.com/bigapplemonkey/frontend-nanodegree-mobile-portfolio#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-responsive-images": "^0.1.9"
+  }
+}
