@@ -2,6 +2,8 @@ module.exports = function(grunt) {
     // Load the Grunt plugins.
     grunt.loadNpmTasks('grunt-responsive-images');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // Project configuration.
     grunt.initConfig({
@@ -45,9 +47,27 @@ module.exports = function(grunt) {
                     dest: 'views/imagesOpt/'
                 }]
             }
+        },
+        cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'views/css/style.min.css': ['views/css/style.css', 'views/css/bootstrap-grid.css']
+                }
+            }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'views/js/main.min.js': ['views/js/main.js']
+                }
+            }
         }
     });
 
     // Register the default tasks.
-    grunt.registerTask('default', ['responsive_images', 'imagemin']);
+    grunt.registerTask('default', ['responsive_images', 'imagemin', 'cssmin', 'uglify']);
 }

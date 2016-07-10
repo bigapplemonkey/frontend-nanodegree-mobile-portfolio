@@ -18,7 +18,9 @@
   "homepage": "https://github.com/bigapplemonkey/frontend-nanodegree-mobile-portfolio#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^1.0.1",
     "grunt-responsive-images": "^0.1.9"
   }
 }
