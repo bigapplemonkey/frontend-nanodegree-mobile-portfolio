@@ -423,6 +423,7 @@ var pizzaElementGenerator = function(i) {
 var resizePizzas = function(size) {
     window.performance.mark('mark_start_resize'); // User Timing API function
 
+    //letting the browser take care of the frame updates
     requestAnimationFrame(function() {
         // Changes the value for the size of the pizza above the slider
         function changeSliderLabel(size) {
@@ -471,8 +472,10 @@ var resizePizzas = function(size) {
 
         // Iterates through pizza elements on the page and changes their widths
         function changePizzaSizes(size) {
+            //avoiding forcing the browser to perform repetitive layouts
             var dx = determineDx(document.querySelectorAll('.randomPizzaContainer')[0], size);
             var newwidth = (document.querySelectorAll('.randomPizzaContainer')[0].offsetWidth + dx) + 'px';
+
             for (var i = 0; i < document.querySelectorAll('.randomPizzaContainer').length; i++) {
                 document.querySelectorAll('.randomPizzaContainer')[i].style.width = newwidth;
             }
@@ -525,8 +528,10 @@ function updatePositions() {
     window.performance.mark('mark_start_frame');
 
     var items = document.querySelectorAll('.mover');
+    //avoiding forcing the browser to perform repetitive layouts
     var currentScroll = document.body.scrollTop;
 
+    //letting the browser take care of the frame updates
     requestAnimationFrame(function() {
         for (var i = 0; i < items.length; i++) {
             var phase = Math.sin((currentScroll / 1250) + (i % 5));
