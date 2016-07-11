@@ -32,7 +32,7 @@ Loading optimizations:
 
 Browser rendering optimizations:
 
-- Reduced forced-synchronous-layout by avoiding repetitive retrieve of elements' attributes that force the browser to perfor layout.
+- Reduced forced-synchronous-layout by avoiding repetitive retrieve of elements' attributes that force the browser to perform layout.
 - Moved all code perfoming style/layout changes to requestAnimationFrame calls to let the browser handle animation frames' rendering.
 - Updated CSS to add the will-change property to the proper elements letting the browser know which properties and elements are going to be manipulated.
 
